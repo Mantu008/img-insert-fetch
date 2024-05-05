@@ -8,7 +8,9 @@ const App = () => {
   const [allImage, setAllImage] = useState([]);
 
   const getPdf = async () => {
-    const result = await axios.get("http://localhost:3000/imgvideo");
+    const result = await axios.get(
+      "https://img-insrt-fetch-back.onrender.com/imgvideo"
+    );
     console.log(result.data);
     setAllImage(result.data);
   };
@@ -29,9 +31,13 @@ const App = () => {
     let formData = new FormData();
     formData.append("title", title);
     formData.append("img", img); // Append image file to FormData
-    let data = await axios.post("http://localhost:3000/imgvideo", formData, {
-      headers: { "Content-Type": "multipart/form-data" },
-    });
+    let data = await axios.post(
+      "https://img-insrt-fetch-back.onrender.com/imgvideo",
+      formData,
+      {
+        headers: { "Content-Type": "multipart/form-data" },
+      }
+    );
 
     console.log(data);
   };
@@ -64,7 +70,7 @@ const App = () => {
               <span>Title:{data.title}</span>
               <img
                 style={{ height: "250px", width: "200px" }}
-                src={`http://localhost:3000/uploads/${data.img}`}
+                src={`https://img-insrt-fetch-back.onrender.com/uploads/${data.img}`}
                 alt=""
               />
               <br /> <br />
