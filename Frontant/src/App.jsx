@@ -66,8 +66,6 @@ const App = () => {
           return (
             <div>
               <span>Title:{data.title}</span>
-              <br />
-              <span>{data.img}</span>
               <img
                 style={{ height: "250px", width: "200px" }}
                 src={`https://img-insrt-fetch-back.onrender.com/uploads/${data.img}`}
