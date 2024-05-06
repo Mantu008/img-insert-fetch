@@ -37,8 +37,7 @@ const App = () => {
         headers: { "Content-Type": "multipart/form-data" },
       }
     );
-
-    console.log(data);
+    getPdf();
   };
 
   return (
